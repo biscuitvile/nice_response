@@ -6,3 +6,5 @@ spec/fixture_app/db/*.sqlite3-journal
 spec/fixture_app/log/*.log
 spec/fixture_app/tmp/
 spec/fixture_app/.sass-cache
+.ruby-version
+.ruby-gemset
