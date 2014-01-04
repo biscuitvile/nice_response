@@ -7,11 +7,11 @@ require "nice_response/version"
 Gem::Specification.new do |s|
   s.name        = "nice_response"
   s.version     = NiceResponse::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of NiceResponse."
-  s.description = "TODO: Description of NiceResponse."
+  s.authors     = ["Andy Borsz"]
+  s.email       = ["andy.borsz@gmail.com"]
+  s.homepage    = "https://github.com/biscuitvile/nice_response"
+  s.summary     = "Lightweight JSON controller implementation for Rails 4"
+  s.description = "Lightweight JSON controller implementation for Rails 4"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
