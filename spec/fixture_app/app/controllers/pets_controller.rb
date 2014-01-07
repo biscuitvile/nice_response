@@ -1,30 +1,7 @@
 class PetsController < ApplicationController
-  respond_to :json
+  include NiceResponse::ControllerSupport
 
-  def index
-    respond_with Pet.all
-  end
-
-  def show
-    respond_with Pet.find(params[:id])
-  end
-
-  def create
-    respond_with Pet.create(pet_params)
-  end
-
-  def update
-    respond_with Pet.update(params[:id], pet_params)
-  end
-
-  def destroy
-    respond_with Pet.find(params[:id]).destroy
-  end
-
-  private
-
-  def pet_params
-    params.require(:pet).permit(:name)
-  end
+  actions :index, :show, :create, :update, :destroy
+  permit :name
 
 end
