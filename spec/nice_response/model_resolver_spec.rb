@@ -1,20 +1,8 @@
 require 'active_support/inflector'
 require 'nice_response/model_resolver'
+require 'fixtures/constants'
 
 describe NiceResponse::ModelResolver do
-
-  class Kitten; end
-  class Doge; end
-  class BigTruck; end
-  class KittensController; end
-  class DogeController; end
-  class BigTrucksController; end
-
-  module Herp
-    module Derp
-      class KittensController; end
-    end
-  end
 
   describe "#model" do
 

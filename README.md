@@ -48,3 +48,20 @@ class ShoesController < ApiController
 end
 
 ```
+
+## Namespaces
+
+`nice_response` will handle namespaces, nested namespaces, or controllers with no namespace at all. However, `nice_response` suggests you namespace and version your API like so:
+
+```
+
+class Api::V1::BaseController < ApplicationController
+  include NiceResponse::ControllerSupport
+end
+
+class Api::V1::ShoesController < Api::V1::BaseController
+  actions :show, :create, :update, :destroy
+  permit :size, :brand_id
+end
+
+```

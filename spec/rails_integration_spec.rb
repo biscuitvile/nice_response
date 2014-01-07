@@ -71,3 +71,20 @@ describe PetsController, type: :controller do
   end
 
 end
+
+describe Api::V1::GerbilsController, type: :controller do
+
+  describe "create" do
+    before { post :create, format: :json, gerbil: { name: 'Fluffy' } }
+
+    it "handles namespaces successfully" do
+      response.code.should eq '201'
+    end
+
+    it "returns a created gerbil as json" do
+      body = JSON.parse response.body
+      body['name'].should eq 'Fluffy'
+    end
+  end
+
+end
