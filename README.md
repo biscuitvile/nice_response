@@ -4,7 +4,7 @@
 
 Consider the following:
 
-``
+```
 
 class ShoesController < ApplicationController
   respond_to :json
@@ -65,3 +65,30 @@ class Api::V1::ShoesController < Api::V1::BaseController
 end
 
 ```
+
+## Roadmap
+
+Ultimatley, `nice_response` is intended to pair well with [decent_exposure](https://github.com/voxdolo/decent_exposure).
+
+The end result should be that `nice_response` and `decent_exposure` together will let you write light, clean interfaces that scope resources:
+
+```
+
+class Api::V1::AppointmentsController < Api::V1::BaseController
+
+  expose(:pets) { current_user.pets }
+  expose(:appointments, ancestor: :pets)
+
+  actions :index, :show, :create, :update, :destory
+  permit :pet_id, :time
+
+end
+
+```
+To acheive this `nice_response` should check for the appropriate exposures and use them in its action templates.
+
+A next logical step would also include sane defaults for validation errors on `create`, `update`, and `destroy` actions, which currently are not checked for.
+
+## Contributing
+
+Pull requests accompanied by tests that match the existing style of the codebase are more than welcome.
